@@ -9,7 +9,7 @@ def load_and_insert_data(config_path, csv_path):
     config = dotenv_values(config_path)
     vstore = initialize_astradb(config)
 
-    loader = CSVLoader(csv_path)
+    loader = CSVLoader(csv_path,metadata_columns=["CreditScore", "Geography","Gender","Age","Balance","EstimatedSalary"])
     vstore.add_documents(documents=loader.load())
     print("Inserted clients into Astra DB")
 
