@@ -20,7 +20,7 @@ tools = [ClientSimilarityTool()]
 message_history = initialize_memory()
 
 # Initialize Chat Model
-llm = ChatOpenAI(openai_api_key=config['OPENAI_API_KEY'], temperature=0)
+llm = ChatOpenAI(openai_api_key=config['OPENAI_API_KEY'], temperature=0,model="gpt-4-0125-preview")
 
 # Initialize System Message
 system_message = SystemMessage(content="You are Bankflix, a sophisticated bank assistant, specialized in credit "

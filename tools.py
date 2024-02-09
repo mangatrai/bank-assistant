@@ -20,7 +20,13 @@ class ClientSimilarityTool(BaseTool):
 
     def _run(self, user_question):
         print(user_question)
-        client_list = vstore.similarity_search(user_question, k=5)
+        client_list = vstore.similarity_search(user_question, 
+                                               k=10, 
+                                               filter={
+                                                   "Gender": "Female",
+                                                   "CreditScore": "700",
+                                                   "Geography": "France"
+                                                   })
 
         return client_list
 
